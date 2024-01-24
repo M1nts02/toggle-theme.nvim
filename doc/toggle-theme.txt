@@ -1,0 +1,59 @@
+*toggle-theme.txt*
+
+==============================================================================
+CONTENTS                                               *toggle-theme_contents*
+
+toggle-theme                                      |toggle-theme_toggle-theme|
+Install                                                |toggle-theme_install|
+Options                                                |toggle-theme_options|
+Commands                                              |toggle-theme_commands|
+
+==============================================================================
+toggle-theme                                       *toggle-theme_toggle-theme*
+
+A neovim plugin for toggle theme.
+
+==============================================================================
+Install                                                 *toggle-theme_install*
+
+>lua
+  -- lazy.nvim
+  require("lazy").setup({
+    {
+      "M1nts02/toggle-theme.nvim",
+      event = "UIEnter",
+      opts = {
+        light_mode = function()
+          vim.cmd "colorscheme zellner"
+        end,
+        dark_mode = function()
+          vim.cmd "colorscheme habamax"
+        end,
+      },
+    },
+  })
+<
+
+==============================================================================
+Options                                                 *toggle-theme_options*
+
+>lua
+  -- default config
+  {
+    light_mode = function()
+    end,
+    dark_mode = function()
+    end,
+  }
+<
+
+==============================================================================
+Commands                                               *toggle-theme_commands*
+
+                                                                *:ToggleTheme*
+:ToggleTheme            Switch theme with dark/light mode.
+>vim
+  :ToggleTheme
+
+==============================================================================
+vim:tw=78:ts=8:noet:ft=help:norl:

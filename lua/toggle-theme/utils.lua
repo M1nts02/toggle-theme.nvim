@@ -12,15 +12,15 @@ end
 
 M.get_system_mode = function()
   if M.is_mac then
-    local result =
-      io.popen([[osascript -e 'tell app \"System Events\" to tell appearance preferences to get dark mode']]):read "l"
+    local result = io.popen("osascript -e 'tell app \"System Events\" to tell appearance preferences to get dark mode'")
+      :read "l"
 
     return result == "true" and true or false
   end
 
   if M.is_windows then
     local result = io.popen(
-      [[reg Query "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize" /v AppsUseLightTheme | findstr "AppsUseLightTheme"]]
+      'reg Query "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize" /v AppsUseLightTheme | findstr "AppsUseLightTheme"'
     )
       :read "l"
 

@@ -27,6 +27,8 @@ require("lazy").setup({
 ```lua
 -- default config
 {
+  following_system = false, -- Only supprt macos and windows10
+  waiting_time = 2000,
   light_mode = function()
   end,
   dark_mode = function()
@@ -100,8 +102,13 @@ require("lazy").setup({
 
 ## Usage
 
+### Not following system
 ```vim
 :ToggleTheme
 ```
 
-![demo](asset/demo.gif)
+![demo](asset/demo_01.gif)
+
+### Following systen
+
+![demo](asset/demo_02.gif)

@@ -90,9 +90,9 @@ M.setup = function(opts)
   M.light_mode = opts.light_mode
   M.dark_mode = opts.dark_mode
 
-  waiting_time = opts.waiting_time and opts.waiting_time or 3000
+  waiting_time = opts.waiting_time and opts.waiting_time or 2000
 
-  if opts.follow_system == true and utils.is_linux == false then
+  if opts.following_system == true and utils.is_linux == false then
     cache.dark = utils.get_system_mode()
     start_job()
   else

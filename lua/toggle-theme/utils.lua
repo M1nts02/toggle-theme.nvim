@@ -17,6 +17,15 @@ M.get_system_mode = function()
 
     return result == "true" and true or false
   end
+
+  if M.is_windows then
+    local result = io.popen(
+      'reg Query "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize" /v AppsUseLightTheme | findstr "AppsUseLightTheme"'
+    )
+      :read "l"
+
+    return result:sub(-1) == "0" and true or false
+  end
   return true
 end
 

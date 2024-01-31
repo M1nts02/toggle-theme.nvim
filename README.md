@@ -109,6 +109,6 @@ require("lazy").setup({
 
 ![demo](asset/demo_01.gif)
 
-### Following systen
+### Following system
 
 ![demo](asset/demo_02.gif)

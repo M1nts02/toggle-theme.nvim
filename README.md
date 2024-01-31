@@ -27,7 +27,7 @@ require("lazy").setup({
 ```lua
 -- default config
 {
-  following_system = false, -- Only supprt macos and windows10
+  following_system = false, -- Only support macos and windows10
   waiting_time = 2000,
   light_mode = function()
   end,

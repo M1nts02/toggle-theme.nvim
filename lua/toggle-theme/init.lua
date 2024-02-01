@@ -4,7 +4,7 @@ M.light_mode = function() end
 
 local utils = require "toggle-theme.utils"
 local timer_id = nil
-local waiting_time = 3000
+local waiting_time = 5000
 
 -- default cache file path
 local cache_path = utils.path_join(vim.fn.stdpath "cache", "toggle_theme.json")

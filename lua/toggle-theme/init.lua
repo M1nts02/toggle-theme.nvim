@@ -93,13 +93,19 @@ M.setup = function(opts)
   waiting_time = opts.waiting_time and opts.waiting_time or 2000
 
   if opts.following_system == true and utils.is_linux == false then
-    cache.dark = utils.get_system_mode()
+    -- Get theme when start
+    vim.fn.timer_start(100, function()
+      local mode = utils.get_system_mode()
+      if mode ~= cache.dark then
+        cache.dark = mode
+        set_theme()
+      end
+    end)
     start_job()
   else
     load_file()
+    set_theme()
   end
-
-  set_theme()
 end
 
 return M

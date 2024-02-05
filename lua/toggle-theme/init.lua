@@ -96,10 +96,8 @@ M.setup = function(opts)
     -- Get theme when start
     vim.fn.timer_start(100, function()
       local mode = utils.get_system_mode()
-      if mode ~= cache.dark then
-        cache.dark = mode
-        set_theme()
-      end
+      cache.dark = mode
+      set_theme()
     end)
     start_job()
   else

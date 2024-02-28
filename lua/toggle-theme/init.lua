@@ -67,15 +67,19 @@ M.toggle_theme = function()
   if timer_id == nil then
     local file = io.open(cache_path, "r")
     if file then
-      cache = vim.json.decode(file:read "*a")
       cache.dark = not cache.dark
-      file:close()
+      if cache.dark == vim.json.decode(file:read "*a").dark then
+        file:close()
+        goto SET
+      end
     end
     create_or_change_cache()
   else
     stop_job()
     cache.dark = not cache.dark
   end
+
+  ::SET::
   set_theme()
 end
 

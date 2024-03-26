@@ -22,20 +22,6 @@ local create_or_change_cache = function()
   cache_file:close()
 end
 
-local load_file = function()
-  -- Read cache file
-  local file = io.open(cache_path, "r")
-
-  -- If file not exist, create cache file and set theme
-  if not file then
-    create_or_change_cache()
-  else
-    -- If file exist, read cache file and set theme
-    cache = vim.json.decode(file:read "*a")
-    file:close()
-  end
-end
-
 local set_theme = function()
   if cache.dark then
     M.dark_mode()

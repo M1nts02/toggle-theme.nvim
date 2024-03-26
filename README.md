@@ -28,6 +28,7 @@ require("lazy").setup({
 -- default config
 {
   following_system = false, -- Only support macos and windows10
+  start_only = false, -- Starting only
   waiting_time = 2000,
   light_mode = function()
   end,

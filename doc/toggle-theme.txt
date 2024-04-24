@@ -41,7 +41,7 @@ Options                                                 *toggle-theme_options*
   -- default config
   {
     following_system = false, -- Only support macos and windows
-  start_only = false, -- Starting only
+    start_only = false, -- Starting only
     waiting_time = 2000,
     light_mode = function()
     end,
